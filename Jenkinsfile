@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
 
     agent {
@@ -5,14 +7,6 @@ pipeline {
             image 'node'
             args '-u root'
         }
-    }
-
-    tools {
-        // Utilisez le type d'outil 'jdk' pour Node.js
-        nodejs 'node'
-
-        // Utilisez le type d'outil 'dockerTool' pour Docker
-        dockerTool 'docker'
     }
 
     stages {
