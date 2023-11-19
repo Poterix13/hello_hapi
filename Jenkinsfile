@@ -1,9 +1,18 @@
 pipeline {
-    agent any
+
+    agent {
+        docker {
+            image 'node'
+            args '-u root'
+        }
+    }
 
     tools {
-        nodejs 'node' // Assurez-vous que l'outil 'node' est configuré dans Jenkins
-        docker 'docker' // Assurez-vous que l'outil 'docker' est configuré dans Jenkins
+        // Utilisez le type d'outil 'jdk' pour Node.js
+        nodejs 'node'
+
+        // Utilisez le type d'outil 'dockerTool' pour Docker
+        dockerTool 'docker'
     }
 
     stages {
